@@ -1,6 +1,7 @@
 import React from 'react';
 import AutocompleteList from './AutocompleteList';
 import { updateUserInput } from '../actions/userInput';
+import { hideDropdown, showDropdown } from '../actions/dropdownVisibility';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function InputField() {
@@ -10,7 +11,13 @@ export default function InputField() {
     const userInput = useSelector(state => state.userInput);
 
     const handleChange = (event) => {
-        dispatch(updateUserInput(event.target.value));
+        const { value } = event.target;
+        dispatch(updateUserInput(value));
+        if (value === '') {
+            dispatch(hideDropdown());
+        } else {
+            dispatch(showDropdown());
+        }
     }
 
     return (
