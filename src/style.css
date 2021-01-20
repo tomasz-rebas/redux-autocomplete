@@ -1,0 +1,21 @@
+body {
+    font-family: 'Segoe UI';
+}
+
+input {
+    border: 0;
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-right: 3px;
+}
+
+button {
+    border: 0;
+    color: white;
+    background-color: lightskyblue;
+    padding: 10px;
+}
+
+.autocomplete {
+    display: inline;
+}
