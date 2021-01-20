@@ -1,11 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function AutocompleteList() {
+
+    const usernames = useSelector(state => state.usernames);
+
+    const dropdown = usernames.map(username => 
+        <div className="autocomplete-list-item" key={username}>
+            {username}
+        </div>
+    );
+
     return (
         <div className="autocomplete-list">
-            <div className="autocomplete-list-item">Richard</div>
+            {/* <div className="autocomplete-list-item">Richard</div>
             <div className="autocomplete-list-item">John</div>
-            <div className="autocomplete-list-item">William</div>
+            <div className="autocomplete-list-item">William</div> */}
+            {dropdown}
         </div>
     );
 }
