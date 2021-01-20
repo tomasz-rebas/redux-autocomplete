@@ -11,7 +11,7 @@ export default function AutocompleteList() {
     const dispatch = useDispatch();
 
     const handleClick = (event) => {
-        dispatch(updateUserInput(event.target.innerHTML));
+        dispatch(updateUserInput(event.target.innerText));
     }
 
     const dropdown = userInput === '' ? '' : usernames.filter(username => 
@@ -22,7 +22,8 @@ export default function AutocompleteList() {
             key={username}
             onClick={handleClick}
         >
-            {username}
+            <strong>{username.substring(0, userInput.length)}</strong>
+            {username.substring(userInput.length)}
         </div>
     );
 
