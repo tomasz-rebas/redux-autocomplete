@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 export default function AutocompleteList() {
 
     const usernames = useSelector(state => state.usernames);
+    const userInput = useSelector(state => state.userInput);
 
     const dropdown = usernames.map(username => 
         <div className="autocomplete-list-item" key={username}>
