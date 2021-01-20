@@ -2,7 +2,7 @@ const usernamesReducer = (state = [], action) => {
 
     switch (action.type) {
         case 'UPDATE_USERNAMES':
-            return state; // TODO
+            return action.payload;
         default:
             return state;
     }
