@@ -7,6 +7,7 @@ input {
     background-color: #f1f1f1;
     padding: 10px;
     margin-right: 3px;
+    width: 250px;
 }
 
 button {
@@ -14,8 +15,31 @@ button {
     color: white;
     background-color: lightskyblue;
     padding: 10px;
+    cursor: pointer;
 }
 
 .autocomplete {
     display: inline;
+    position: relative;
+}
+
+.autocomplete-list {
+    position: absolute;
+    z-index: 2;
+}
+
+.autocomplete-list-item {
+    border: 1px solid #ddd;
+    width: 248px;
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.autocomplete-list-item:not(:last-child) {
+    border-bottom: none;
+}
+
+.autocomplete-list-item:hover {
+    background-color: #eee;
 }

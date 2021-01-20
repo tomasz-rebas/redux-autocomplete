@@ -1,4 +1,5 @@
 import React from 'react';
+import AutocompleteList from './AutocompleteList';
 
 export default function InputField() {
     return (
@@ -7,6 +8,7 @@ export default function InputField() {
                 type="text" 
                 placeholder="Name"
             />
+            <AutocompleteList/>
         </div>
     );
 }
