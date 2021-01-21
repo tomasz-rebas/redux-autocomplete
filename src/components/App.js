@@ -14,7 +14,6 @@ export default function App() {
             const response = await fetch('https://jsonplaceholder.typicode.com/users');
             const data = await response.json();
             const usernames = getUsernames(data);
-            console.log(usernames);
             dispatch(updateUsernames(usernames));
         } catch (e) {
             console.error('The error occured. ' + e);
