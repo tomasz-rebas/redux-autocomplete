@@ -10,8 +10,8 @@ export default function InputField() {
 
     const userInput = useSelector(state => state.userInput);
 
-    const handleChange = (event) => {
-        const { value } = event.target;
+    const handleChange = e => {
+        const { value } = e.target;
         dispatch(updateUserInput(value));
         if (value === '') {
             dispatch(hideDropdown());
