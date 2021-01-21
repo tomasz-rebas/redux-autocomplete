@@ -1,5 +1,5 @@
 import '../style.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import InputField from './InputField';
 import getUsernames from '../functions/getUsernames';
 import { updateUsernames } from '../actions/usernames';
@@ -20,7 +20,9 @@ export default function App() {
         }
     }
 
-    fetchData();
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <div>
