@@ -7,12 +7,11 @@ import { hideDropdown } from '../actions/dropdownVisibility';
 export default function AutocompleteList() {
 
     const node = useRef();
+    const dispatch = useDispatch();
 
     const usernames = useSelector(state => state.usernames);
     const userInput = useSelector(state => state.userInput);
     const dropdownVisibility = useSelector(state => state.dropdownVisibility);
-
-    const dispatch = useDispatch();
 
     const handleClick = e => {
         dispatch(updateUserInput(e.target.innerText));
