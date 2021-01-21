@@ -18,6 +18,12 @@ export default function AutocompleteList() {
         dispatch(hideDropdown());
     }
 
+    const handleOutsideClick = e => {
+        if (!node.current.contains(e.target)) {
+            dispatch(hideDropdown());
+        }
+    }
+
     const dropdown = dropdownVisibility ? usernames.filter(username => 
         shouldBeSuggested(username, userInput)
     ).map(username => 
@@ -30,12 +36,6 @@ export default function AutocompleteList() {
             {username.substring(userInput.length)}
         </div>
     ) : '';
-
-    const handleOutsideClick = e => {
-        if (!node.current.contains(e.target)) {
-            dispatch(hideDropdown());
-        }
-    };
 
     useEffect(() => {
         document.addEventListener("mousedown", handleOutsideClick);
